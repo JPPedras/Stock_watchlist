@@ -7,9 +7,13 @@ def login_page():
 
     return 'Login Page'
 
+@auth.route('sign-up')
+def signup_page():
 
-@auth.route('/register')
-def register_page():
+    return 'Sign-up Page'
 
-    return 'Register Page'
+@auth.route('logout')
+def logout_page():
+
+    return 'Logout Page'
 
