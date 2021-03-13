@@ -1,3 +1,41 @@
 {% extends "base.html" %} {% block title %}Home{% endblock %}{% block content%}
-<h1>Home Page</h1>
+<h2 align="center">Watchlist</h2>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Ticker</th>
+      <th scope="col">Price</th>
+      <th scope="col">Change(%)</th>
+      <th scope="col">Market cap</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for stock in user.stocks %}
+    <tr>
+      <th>{{stock.ticker}}</th>
+      <td>{{stock.price}}</td>
+      <td>{{stock.change}}%</td>
+      <td>{{stock.market_cap}}</td>
+      <td>
+        <button
+          type="button"
+          class="close"
+          onClick="deleteStock({{ stock.id }})"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+<form method="POST" class="form-inline">
+  <input
+    name="ticker"
+    id="ticker"
+    class="form-control mr-3"
+    placeholder="Stock Ticker"
+  />
+  <button class="btn btn-primary" type="submit">Add Stock</button>
+</form>
 {% endblock %}

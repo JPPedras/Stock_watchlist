@@ -49,8 +49,8 @@ def signup_page():
             new_user=User(email=email, username=username, password=generate_password_hash(password1, method='sha256'))
             db.session.add(new_user)
             db.session.commit()
-            login_user(user, remember=True)
-            flash('Account created succesfully!.', category='success')
+            login_user(new_user, remember=True)
+            flash('Account created succesfully!', category='success')
             return redirect(url_for('views.home_page'))
         
 
@@ -62,4 +62,3 @@ def logout_page():
     logout_user()
 
     return redirect(url_for('auth.login_page'))
-
