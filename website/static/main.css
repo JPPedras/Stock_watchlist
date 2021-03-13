@@ -1,0 +1,21 @@
+body {
+  background-color: #212121;
+  color: white;
+}
+.nav-link {
+  font-family: Lato, monospace;
+  font-size: 20px;
+  color: white;
+}
+.navbar-brand {
+  font-family: Lobster, monospace;
+  font-size: 40px;
+  color: white;
+}
+.container {
+  padding-top: 10rem;
+  font-family: "Lato";
+}
+.form-control {
+  color: white;
+}
